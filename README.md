@@ -1,0 +1,1 @@
+A webpack template.
