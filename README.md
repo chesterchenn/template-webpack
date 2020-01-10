@@ -1,1 +1,1 @@
-A webpack template.
+A webpack template with babel and React.
