@@ -1,5 +1,8 @@
 #!/usr/bin/env bash 
 
 # 初始化typescript
-dir='./plugin/typescript'
-cp ${dir}/tsconfig.json ./
+rootDir="$PWD"
+dir="${PWD}/plugin/typescript"
+
+cp ${dir}/tsconfig.json ${PWD}
+cp -r ${dir}/src ${PWD}

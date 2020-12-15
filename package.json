@@ -28,7 +28,8 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "init:ts": "sh bin/ts.sh"
+    "init:js": "bash bin/clear.sh && bash bin/js.sh",
+    "init:ts": "bash bin/clear.sh && bash bin/ts.sh"
   },
   "keywords": [
     "template"
