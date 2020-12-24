@@ -4,10 +4,10 @@
 const path = require('path');
 const fs = require('fs');
 
+const type = true ? 'typescript' : 'javascript';
 const root = process.cwd();
-const pluginDir = path.join(root, 'plugin', 'typescript');
+const pluginDir = path.join(root, 'plugin', type);
 
-_clear();
 _readFile(pluginDir, root);
 
 function _readFile (directory, dest) {
@@ -27,14 +27,3 @@ function _readFile (directory, dest) {
     }
   })
 }
-
-function _clear () {
-  const needClear = ['tsconfig.json', 'src'];
-  needClear.forEach(item => {
-    const file = path.join(root, item);
-    if (fs.existsSync(file)) {
-      fs.rmSync(file, { recursive: true });
-    }
-  })
-}
-
