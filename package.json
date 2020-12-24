@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "description": "",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -28,8 +30,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "init:js": "bash bin/clear.sh && bash bin/js.sh",
-    "init:ts": "bash bin/clear.sh && bash bin/ts.sh"
+    "clear": "node bin/clear.js",
+    "init:ts": "node bin/ts.js --type typescript",
+    "init:js": "node bin/ts.js --type javascript"
   },
   "keywords": [
     "template"

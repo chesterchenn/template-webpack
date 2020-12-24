@@ -3,21 +3,41 @@
 
 const path = require('path');
 const fs = require('fs');
-
-const type = true ? 'typescript' : 'javascript';
+const commander = require('commander');
+const chalk = require('chalk');
 const root = process.cwd();
-const pluginDir = path.join(root, 'plugin', type);
 
-_readFile(pluginDir, root);
+/**
+ * 初始化
+ */
+function init() {
+  const program = new commander.Command();
+  program
+    .option('--type <type>', 'specify the script type', 'typescript')
+    .action((cmd) => {
+      console.log(`${chalk.green('The script type is', cmd.type)}`,);
+      const type = cmd.type;
+      const pluginDir = path.join(root, 'plugin', type);
+      readFile(pluginDir, root);
+    })
+  program.parse(process.argv);
+}
 
-function _readFile (directory, dest) {
+/**
+ * 文件操作
+ * @param {string} directory 源文件目录
+ * @param {string} dest 目的文件目录
+ */
+function readFile(directory, dest) {
   fs.readdirSync(directory).forEach(file => {
     const stats = fs.lstatSync(path.join(directory, file));
     if (stats.isDirectory()) {
       const subDir = path.join(directory, file);
       const subDest = path.join(root, file);
-      fs.mkdirSync(subDest);
-      _readFile(subDir, subDest);
+      if (!fs.existsSync(subDest)) {
+        fs.mkdirSync(subDest)
+      }
+      readFile(subDir, subDest);
     } else {
       const destFile = path.join(dest, file);
       const readFile = fs.readFileSync(`${directory}/${file}`, 'utf-8');
@@ -27,3 +47,5 @@ function _readFile (directory, dest) {
     }
   })
 }
+
+init();

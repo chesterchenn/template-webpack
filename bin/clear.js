@@ -4,9 +4,11 @@
 const fs = require('fs');
 const path = require('path');
 const root = process.cwd();
-
-function _clear () {
-  const needClear = ['tsconfig.json', 'src'];
+const needClear = ['tsconfig.json', 'src'];
+/**
+ * 清除目标目录 ['tsconfig.json', 'src']
+ */
+function clear() {
   needClear.forEach(item => {
     const file = path.join(root, item);
     if (fs.existsSync(file)) {
@@ -15,4 +17,4 @@ function _clear () {
   })
 }
 
-_clear();
+clear();
