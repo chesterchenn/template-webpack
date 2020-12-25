@@ -1,5 +1,4 @@
 node_modules/
 dist/
-src/
-tsconfig.json
-config.json
+/src/
+/tsconfig.json
