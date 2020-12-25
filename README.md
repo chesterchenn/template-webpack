@@ -1,1 +1,1 @@
-A webpack template with babel and React.
+Use React and TS quickly.
