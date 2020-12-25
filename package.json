@@ -31,7 +31,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "nodee bin/start.js",
+    "start": "node bin/start.js",
     "clear": "node bin/clear.js",
     "init:ts": "node bin/init.js --type typescript",
     "init:js": "node bin/init.js --type javascript"
