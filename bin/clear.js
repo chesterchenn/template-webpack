@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const root = process.cwd();
 const needClear = ['tsconfig.json', 'src', 'config.json'];
 /**
@@ -15,6 +16,8 @@ function clear() {
       fs.rmSync(file, { recursive: true });
     }
   })
+
+  fs.writeFileSync(path.join(root, 'config.json'), JSON.stringify({}, null, 2) + os.EOL);
 }
 
 clear();
