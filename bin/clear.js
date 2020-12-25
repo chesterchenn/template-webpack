@@ -7,7 +7,7 @@ const os = require('os');
 const root = process.cwd();
 const needClear = ['tsconfig.json', 'src', 'config.json'];
 /**
- * 清除目标目录 ['tsconfig.json', 'src']
+ * 清除目标目录
  */
 function clear() {
   needClear.forEach(item => {
