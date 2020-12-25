@@ -1,14 +1,8 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const config = require('./config.json');
-const chalk =require('chalk');
+const config = require('../config.json');
 const isTypeScript = config.type === 'typescript';
-const isJavaScript = config.type === 'javascript';
-
-if (!isTypeScript && !isJavaScript) {
-  console.error(`${chalk.red('You need to run')} ${chalk.green('npm run init')} ${chalk.red('at first.')}`)
-}
 
 module.exports = {
   entry: {
