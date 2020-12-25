@@ -6,6 +6,7 @@ const fs = require('fs');
 const commander = require('commander');
 const chalk = require('chalk');
 const root = process.cwd();
+const os = require('os');
 
 /**
  * 初始化
@@ -17,6 +18,10 @@ function init() {
     .action((cmd) => {
       console.log(`${chalk.green('The script type is', cmd.type)}`,);
       const type = cmd.type;
+      const data = {
+        type,
+      }
+      fs.writeFileSync(path.join(root, 'config.json'), JSON.stringify(data, null, 2) + os.EOL)
       const pluginDir = path.join(root, 'plugin', type);
       readFile(pluginDir, root);
     })
