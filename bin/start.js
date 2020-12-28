@@ -15,7 +15,7 @@ const exec = () => {
     'webpack-dev-server',
     '--open',
     '--config',
-    'webpack.dev.js'
+    'webpack/webpack.dev.js'
   ]
 
   spawn(command, args,  { stdio: 'inherit' });

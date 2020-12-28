@@ -2,35 +2,41 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('../config.json');
+
+const root = process.cwd();
+const src = path.resolve(root, 'src');
+const dist = path.resolve(root, 'dist');
 const isTypeScript = config.type === 'typescript';
+const entryIndex = isTypeScript ? path.join(src, 'index.tsx') : path.join(src, '/index.js');
+const indexHTML = path.resolve(root, 'index.html');
 
 module.exports = {
   entry: {
-    app: isTypeScript ? './src/index.tsx': './src/index.js',
+    app: entryIndex,
   },
   output: {
     filename: '[name].bundles.js',
-    path: path.resolve( __dirname, 'dist'),
+    path: dist,
   },
   module: {
     rules: [{
       test: /\.(js|jsx)/,
       exclude: /node_modules/,
-      loaders: ['babel-loader'],
+      use: ['babel-loader'],
     }, {
       test: /\.tsx?$/,
       exclude: /node_modules/,
-      loader: 'ts-loader',
+      use: ['ts-loader'],
     }, {
       test: /\.css/,
       exclude: /node_modules/,
-      loader: ['style-loader', 'css-loader'],
+      use: ['style-loader', 'css-loader'],
     }],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
+      template: indexHTML,
     })
   ]
 }
