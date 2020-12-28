@@ -14,7 +14,18 @@ module.exports = {
     rules: [{
       test: /\.(js|jsx)/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
+      use: [{
+        loader: 'thread-loader',
+        options: {
+          workers: 2,
+          poolTimeout: Infinity,
+        }
+      }, {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+        }
+      }],
     }, {
       test: /\.tsx?$/,
       exclude: /node_modules/,
