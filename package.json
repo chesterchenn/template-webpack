@@ -33,7 +33,7 @@
   "scripts": {
     "start": "node bin/start.js",
     "clear": "node bin/clear.js",
-    "init:ts": "node bin/init.js --type typescript",
+    "init": "node bin/init.js",
     "init:js": "node bin/init.js --type javascript"
   },
   "keywords": [

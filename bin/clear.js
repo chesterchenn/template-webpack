@@ -3,9 +3,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const os = require('os');
 const root = process.cwd();
-const needClear = ['tsconfig.json', 'src', 'config.json'];
+const needClear = ['src', '.config.json'];
 /**
  * 清除目标目录
  */
@@ -16,8 +15,6 @@ function clear() {
       fs.rmSync(file, { recursive: true });
     }
   })
-
-  fs.writeFileSync(path.join(root, 'config.json'), JSON.stringify({}, null, 2) + os.EOL);
 }
 
 clear();

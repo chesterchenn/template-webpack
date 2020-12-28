@@ -1,14 +1,6 @@
-const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const config = require('../config.json');
-
-const root = process.cwd();
-const src = path.resolve(root, 'src');
-const dist = path.resolve(root, 'dist');
-const isTypeScript = config.type === 'typescript';
-const entryIndex = isTypeScript ? path.join(src, 'index.tsx') : path.join(src, '/index.js');
-const indexHTML = path.resolve(root, 'index.html');
+const { dist, indexHTML, entryIndex } = require('../paths');
 
 module.exports = {
   entry: {

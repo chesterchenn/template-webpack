@@ -5,8 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const commander = require('commander');
 const chalk = require('chalk');
-const root = process.cwd();
 const os = require('os');
+const { root, localPath } = require('../paths');
 
 /**
  * 初始化
@@ -21,7 +21,7 @@ function init() {
       const data = {
         type,
       }
-      fs.writeFileSync(path.join(root, 'config.json'), JSON.stringify(data, null, 2) + os.EOL)
+      fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL)
       const pluginDir = path.join(root, 'plugin', type);
       readFile(pluginDir, root);
     })
