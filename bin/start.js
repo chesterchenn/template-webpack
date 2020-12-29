@@ -7,10 +7,11 @@ const chalk =require('chalk');
 const { isJavaScript, isTypeScript } = require('../paths.js')
 
 const exec = () => {
-  const command = 'npx';
+  const command = 'webpack';
   args = [
-    'webpack-dev-server',
+    'serve',
     '--open',
+    'firefox',
     '--config',
     'webpack/webpack.dev.js'
   ]
