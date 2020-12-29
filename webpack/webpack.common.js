@@ -46,6 +46,16 @@ module.exports = {
       test: /\.css/,
       exclude: /node_modules/,
       use: ['style-loader', 'css-loader'],
+    }, {
+      test: /\.scss/,
+      exclude: /node_modules/,
+      use: ['style-loader', 'css-loader', {
+        loader: 'sass-loader',
+        options: {
+          // 默认使用 dart-sass
+          implementation: require("sass"),
+        }
+      }]
     }],
   },
   plugins: [
