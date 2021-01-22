@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const root = process.cwd();
-const needClear = ['src', '.config.json'];
+const needClear = ['src', '.config.json', '.babelrc', 'tsconfig.json'];
 /**
  * 清除目标目录
  */

@@ -3,3 +3,5 @@ dist/
 /src/
 .config.json
 yarn-error.log
+/.babelrc
+/tsconfig.json
