@@ -28,4 +28,5 @@ module.exports = {
   entryIndex,
   isTypeScript,
   isJavaScript,
+  src,
 }

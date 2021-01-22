@@ -7,16 +7,8 @@ const chalk =require('chalk');
 const { isJavaScript, isTypeScript } = require('../paths.js')
 
 const exec = () => {
-  const command = 'webpack';
-  args = [
-    'serve',
-    '--open',
-    'firefox',
-    '--config',
-    'webpack/webpack.dev.js'
-  ]
-
-  spawn(command, args,  { stdio: 'inherit' });
+  const args = ['serve', '--config', 'webpack/webpack.dev.js'];
+  spawn('webpack', args, { stdio: 'inherit' });
 }
 
 if (!isTypeScript && !isJavaScript) {
