@@ -9,3 +9,8 @@ const App = () => (
 )
 
 ReactDOM.render(<App />,document.getElementById('root'));
+
+if(module.hot){
+  // accept itself
+  module.hot.accept()
+}
