@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "noImplicitAny": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
