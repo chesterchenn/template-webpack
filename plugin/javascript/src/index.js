@@ -4,13 +4,12 @@ import './style.scss';
 
 const App = () => (
   <div>
-    Hello React.
+    Hello JavaScript.
   </div>
 )
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-if(module.hot){
-  // accept itself
+if (module.hot) {
   module.hot.accept()
 }

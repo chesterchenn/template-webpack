@@ -45,11 +45,11 @@ module.exports = {
     }, {
       test: /\.css/,
       exclude: /node_modules/,
-      use: ['style-loader', 'css-loader'],
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
     }, {
       test: /\.scss/,
       exclude: /node_modules/,
-      use: ['style-loader', 'css-loader', {
+      use: ['style-loader', 'css-loader', 'postcss-loader', {
         loader: 'sass-loader',
         options: {
           // 默认使用 dart-sass
