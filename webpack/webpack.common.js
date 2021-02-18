@@ -43,19 +43,22 @@ module.exports = {
         }
       }]
     }, {
-      test: /\.css/,
+      test: /\.(c|sc)ss/,
       exclude: /node_modules/,
-      use: ['style-loader', 'css-loader', 'postcss-loader'],
-    }, {
-      test: /\.scss/,
-      exclude: /node_modules/,
-      use: ['style-loader', 'css-loader', 'postcss-loader', {
-        loader: 'sass-loader',
+      use: ['style-loader', {
+        loader: 'css-loader',
         options: {
-          // 默认使用 dart-sass
-          implementation: require("sass"),
+          esModule: true,
+          importLoaders: 2,
+          modules: true,
         }
-      }]
+      }, 'postcss-loader', {
+          loader: 'sass-loader',
+          options: {
+            // 默认使用 dart-sass
+            implementation: require("sass"),
+          }
+        }]
     }],
   },
   plugins: [
