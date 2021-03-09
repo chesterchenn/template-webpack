@@ -46,12 +46,12 @@ module.exports = {
       test: /\.(c|sc)ss/,
       exclude: /node_modules/,
       use: ['style-loader', 'css-loader', 'postcss-loader', {
-          loader: 'sass-loader',
-          options: {
-            // 默认使用 dart-sass
-            implementation: require("sass"),
-          }
-        }]
+        loader: 'sass-loader',
+        options: {
+          // 默认使用 dart-sass
+          implementation: require("sass"),
+        }
+      }]
     }],
   },
   plugins: [
@@ -60,4 +60,4 @@ module.exports = {
       template: indexHTML,
     })
   ]
-}
+};

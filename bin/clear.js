@@ -14,7 +14,7 @@ function clear() {
     if (fs.existsSync(file)) {
       fs.rmSync(file, { recursive: true });
     }
-  })
+  });
 }
 
 clear();

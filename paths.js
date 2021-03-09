@@ -15,10 +15,10 @@ function exportPath() {
   }
   isTypeScript = config.type === 'typescript';
   isJavaScript = config.type === 'javascript';
-  entryIndex = isTypeScript ? path.join(src, 'index.tsx') : path.join(src, 'index.js')
+  entryIndex = isTypeScript ? path.join(src, 'index.tsx') : path.join(src, 'index.js');
 }
 
-exportPath()
+exportPath();
 
 module.exports = {
   dist,
@@ -29,4 +29,4 @@ module.exports = {
   isTypeScript,
   isJavaScript,
   src,
-}
+};

@@ -20,11 +20,11 @@ function init() {
       const type = cmd.type;
       const data = {
         type,
-      }
-      fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL)
+      };
+      fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL);
       const pluginDir = path.join(root, 'plugin', type);
       readFile(pluginDir, root);
-    })
+    });
   program.parse(process.argv);
 }
 
@@ -40,7 +40,7 @@ function readFile(directory, dest) {
       const subDir = path.join(directory, file);
       const subDest = path.join(root, file);
       if (!fs.existsSync(subDest)) {
-        fs.mkdirSync(subDest)
+        fs.mkdirSync(subDest);
       }
       readFile(subDir, subDest);
     } else {
@@ -48,9 +48,9 @@ function readFile(directory, dest) {
       const readFile = fs.readFileSync(`${directory}/${file}`, 'utf-8');
       fs.writeFileSync(
         destFile, readFile
-      )
+      );
     }
-  })
+  });
 }
 
 init();
