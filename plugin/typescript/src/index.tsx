@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../styles/common.scss';
 import './style.scss';
 
 const App = (): JSX.Element => (
