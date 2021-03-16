@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './style.scss';
 
 const App = (): JSX.Element => (
-  <div>
-    Hello TypeScript.
-  </div>
+  <>
+    <div className="text">
+      Hello TypeScript.
+    </div>
+  </>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'));

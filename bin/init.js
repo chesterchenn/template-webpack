@@ -22,7 +22,7 @@ function init() {
         type,
       };
       fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL);
-      const pluginDir = path.join(root, 'plugin', type);
+      const pluginDir = path.join(root, 'plugins', type);
       readFile(pluginDir, root);
     });
   program.parse(process.argv);
