@@ -40,7 +40,8 @@
     "clear": "node bin/clear.js",
     "init": "node bin/init.js",
     "init:ts": "node bin/init.js --type typescript",
-    "init:js": "node bin/init.js --type javascript"
+    "init:js": "node bin/init.js --type javascript",
+    "build": "webpack --config webpack/webpack.prod.js"
   },
   "keywords": [
     "template"
