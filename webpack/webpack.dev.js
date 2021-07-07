@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    contentBase: paths.dist,
+    static: paths.dist,
     port: 8080,
     open: true,
     hot: true,
