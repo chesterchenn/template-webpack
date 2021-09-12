@@ -1,14 +1,12 @@
-#!/usr/bin/env node
-'use strict';
+import fs from 'fs';
+import path from 'path';
 
-const fs = require('fs');
-const path = require('path');
 const root = process.cwd();
-const needClear = ['src', '.config.json', '.babelrc', 'tsconfig.json'];
+const needClear: string[] = ['src', '.config.json', '.babelrc', 'tsconfig.json'];
 /**
  * 清除目标目录
  */
-function clear() {
+function clear(): void {
   needClear.forEach(item => {
     const file = path.join(root, item);
     if (fs.existsSync(file)) {

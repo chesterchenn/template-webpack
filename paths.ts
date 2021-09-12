@@ -1,14 +1,18 @@
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 const root = process.cwd();
 const src = path.resolve(root, 'src');
 const dist = path.resolve(__dirname, 'dist');
 const localPath = path.resolve(__dirname, '.config.json');
 const indexHTML = path.resolve(root, 'index.html');
-let isTypeScript, isJavaScript, entryIndex;
+let isTypeScript: boolean; 
+let isJavaScript: boolean;
+let entryIndex: string;
 
 function exportPath() {
-  let config = {};
+  let config = {
+    type: '',
+  };
 
   if (fs.existsSync(localPath)) {
     config = require(localPath);
@@ -20,7 +24,7 @@ function exportPath() {
 
 exportPath();
 
-module.exports = {
+export {
   dist,
   root,
   indexHTML,

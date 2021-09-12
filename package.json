@@ -3,18 +3,28 @@
   "sideEffects": false,
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "start": "node bin/start.js",
+    "clear": "ts-node bin/clear.ts",
+    "init": "ts-node bin/init.ts",
+    "init:ts": "ts-node bin/init.ts --type typescript",
+    "init:js": "ts-node bin/init.ts --type javascript",
+    "build": "webpack --config webpack/webpack.prod.js"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "8.1.0",
     "cross-spawn": "^7.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@types/node": "^16.9.1",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
     "@types/webpack-env": "^1.16.2",
@@ -36,14 +46,6 @@
     "webpack-merge": "5.8.0"
   },
   "private": true,
-  "scripts": {
-    "start": "node bin/start.js",
-    "clear": "node bin/clear.js",
-    "init": "node bin/init.js",
-    "init:ts": "node bin/init.js --type typescript",
-    "init:js": "node bin/init.js --type javascript",
-    "build": "webpack --config webpack/webpack.prod.js"
-  },
   "keywords": [
     "template"
   ],

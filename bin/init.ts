@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-'use strict';
-
-const path = require('path');
-const fs = require('fs');
-const commander = require('commander');
-const chalk = require('chalk');
-const os = require('os');
-const { root, localPath } = require('../paths');
+import path from 'path';
+import fs from 'fs';
+import commander from 'commander';
+import chalk from 'chalk';
+import os from 'os';
+import { root, localPath } from '../paths';
 
 /**
  * 初始化
@@ -33,7 +30,7 @@ function init() {
  * @param {string} directory 源文件目录
  * @param {string} dest 目的文件目录
  */
-function readFile(directory, dest) {
+function readFile(directory: string, dest: string) {
   fs.readdirSync(directory).forEach(file => {
     const stats = fs.lstatSync(path.join(directory, file));
     if (stats.isDirectory()) {
