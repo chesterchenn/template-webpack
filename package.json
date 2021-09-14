@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node bin/start.js",
+    "start": "ts-node bin/start.ts",
     "clear": "ts-node bin/clear.ts",
     "init": "ts-node bin/init.ts",
     "init:ts": "ts-node bin/init.ts --type typescript",
     "init:js": "ts-node bin/init.ts --type javascript",
-    "build": "webpack --config webpack/webpack.prod.js"
+    "build": "webpack --config webpack/webpack.prod.ts"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -27,6 +27,7 @@
     "@types/node": "^16.9.1",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@types/webpack-dev-server": "^4.1.0",
     "@types/webpack-env": "^1.16.2",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
