@@ -13,7 +13,6 @@ const config: Configuration = merge(common, {
     hot: true,
   },
   devtool: "inline-source-map",
-  plugins: [new webpack.HotModuleReplacementPlugin()],
 });
 
 export default config;
