@@ -4,14 +4,12 @@ import './style.scss';
 
 class Greeting extends React.Component {
   render() {
-    return (
-      <>Hello, JavaScript.</>
-    );
+    return <>Hello, JavaScript.</>;
   }
 }
 
 const App = () => (
-  <div className="text">
+  <div className='text'>
     <Greeting />
   </div>
 );
