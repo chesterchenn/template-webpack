@@ -26,9 +26,9 @@ jobs:
       run: |
         npm install
 
-    - name: Init
-      run: |
-        npm run init:ts
+    # - name: Init
+    #   run: |
+    #     npm run init:ts
 
     - name: Build
       run: |
