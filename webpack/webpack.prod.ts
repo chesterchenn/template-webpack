@@ -7,7 +7,10 @@ const config: Configuration = merge(common, {
   plugins: [
     {
       apply: (compiler: Compiler) => {
-        compiler.hooks.done.tap('done', () => {
+        compiler.hooks.done.tap('done', (stats) => {
+          if (stats.compilation.errors.length > 0) {
+            throw new Error('Compile is error');
+          }
           console.log('Compile is done');
           setTimeout(() => {
             process.exit(0);
