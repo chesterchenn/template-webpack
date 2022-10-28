@@ -75,6 +75,9 @@ const config: Configuration = {
       template: indexHTML,
     }),
   ],
+  resolve: {
+    extensions: [".ts", ".js", ".tsx"]
+  }
 };
 
 export default config;
