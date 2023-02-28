@@ -1,16 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+
 import './style.scss';
-
-function Greeting() {
-  return <>Hello, TypeScript.</>;
-}
-
-const App = (): JSX.Element => (
-  <div className="text">
-    <Greeting />
-  </div>
-);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

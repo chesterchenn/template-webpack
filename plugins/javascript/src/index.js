@@ -1,18 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
+import App from './App';
 
-class Greeting extends React.Component {
-  render() {
-    return <>Hello, JavaScript.</>;
-  }
-}
-
-const App = () => (
-  <div className='text'>
-    <Greeting />
-  </div>
-);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
