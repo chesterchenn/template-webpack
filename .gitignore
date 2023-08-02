@@ -1,7 +1,10 @@
 node_modules/
 dist/
+.vscode/
+
+yarn-error.log
+
 /src/
 .config.json
-yarn-error.log
 /.babelrc
 /tsconfig.json
