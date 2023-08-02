@@ -1,27 +1,25 @@
 import path from 'path';
 import fs from 'fs';
 import commander from 'commander';
-import chalk from 'chalk';
 import os from 'os';
 import { root, localPath } from '../paths';
+import chalk from 'chalk';
 
 /**
  * 初始化
  */
 function init() {
   const program = new commander.Command();
-  program
-    .option('--type <type>', 'specify the script type', 'typescript')
-    .action((cmd) => {
-      console.log(`${chalk.green('The script type is', cmd.type)}`,);
-      const type = cmd.type;
-      const data = {
-        type,
-      };
-      fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL);
-      const pluginDir = path.join(root, 'plugins', type);
-      readFile(pluginDir, root);
-    });
+  program.option('--type <type>', 'specify the script type', 'typescript').action(async (cmd) => {
+    console.log(`${chalk.green('The script type is', cmd.type)}`);
+    const type = cmd.type;
+    const data = {
+      type,
+    };
+    fs.writeFileSync(localPath, JSON.stringify(data, null, 2) + os.EOL);
+    const pluginDir = path.join(root, 'plugins', type);
+    readFile(pluginDir, root);
+  });
   program.parse(process.argv);
 }
 
@@ -31,7 +29,7 @@ function init() {
  * @param {string} dest 目的文件目录
  */
 function readFile(directory: string, dest: string) {
-  fs.readdirSync(directory).forEach(file => {
+  fs.readdirSync(directory).forEach((file) => {
     const stats = fs.lstatSync(path.join(directory, file));
     if (stats.isDirectory()) {
       const subDir = path.join(directory, file);
@@ -43,9 +41,7 @@ function readFile(directory: string, dest: string) {
     } else {
       const destFile = path.join(dest, file);
       const readFile = fs.readFileSync(`${directory}/${file}`, 'utf-8');
-      fs.writeFileSync(
-        destFile, readFile
-      );
+      fs.writeFileSync(destFile, readFile);
     }
   });
 }
