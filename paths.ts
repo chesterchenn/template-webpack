@@ -5,7 +5,9 @@ const src = path.resolve(root, 'src');
 const dist = path.resolve(__dirname, 'dist');
 const localPath = path.resolve(__dirname, '.config.json');
 const indexHTML = path.resolve(root, 'index.html');
-let isTypeScript: boolean; 
+const assets = path.resolve(root, 'assets');
+
+let isTypeScript: boolean;
 let isJavaScript: boolean;
 let entryIndex: string;
 
@@ -24,13 +26,4 @@ function exportPath() {
 
 exportPath();
 
-export {
-  dist,
-  root,
-  indexHTML,
-  localPath,
-  entryIndex,
-  isTypeScript,
-  isJavaScript,
-  src,
-};
+export { dist, root, indexHTML, localPath, entryIndex, isTypeScript, isJavaScript, src, assets };

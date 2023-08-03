@@ -1,6 +1,6 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { dist, indexHTML, entryIndex } from '../paths';
+import { dist, indexHTML, entryIndex, assets } from '../paths';
 import { Configuration } from 'webpack';
 
 const config: Configuration = {
@@ -67,6 +67,10 @@ const config: Configuration = {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -76,7 +80,10 @@ const config: Configuration = {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', 'jsx'],
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.png'],
+    alias: {
+      assets: assets,
+    },
   },
 };
 
