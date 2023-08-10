@@ -9,7 +9,10 @@ const config: Configuration = merge(common, {
       apply: (compiler: Compiler) => {
         compiler.hooks.done.tapAsync('done', (stats) => {
           if (stats.compilation.errors.length > 0) {
-            throw new Error('Compile is error');
+            for (const error of stats.compilation.errors) {
+              console.error(error);
+            }
+            throw new Error('Compile Error');
           }
           console.log('Compile is done');
           process.exit(0);

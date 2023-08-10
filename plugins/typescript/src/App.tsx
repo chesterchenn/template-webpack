@@ -1,5 +1,5 @@
 import React from 'react';
-import webpack_png from '@assets/webpack.png';
+import webpack_png from 'assets/webpack.png';
 
 const App = (): React.ReactNode => {
   return (
