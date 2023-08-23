@@ -8,3 +8,4 @@ yarn-error.log
 .config.json
 /.babelrc
 /tsconfig.json
+/types
