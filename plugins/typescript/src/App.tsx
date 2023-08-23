@@ -1,7 +1,7 @@
 import React from 'react';
 import webpack_png from 'assets/webpack.png';
 
-const App = (): React.ReactNode => {
+const App = (): React.ReactElement | null => {
   return (
     <>
       <div className="text">
