@@ -1,6 +1,6 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { dist, indexHTML, entryIndex, assets } from '../paths';
+import { dist, indexHTML, entryIndex, assets, themeColor } from '../paths';
 import { Configuration } from 'webpack';
 
 const config: Configuration = {
@@ -63,6 +63,7 @@ const config: Configuration = {
             options: {
               // 默认使用 dart-sass
               implementation: require('sass'),
+              additionalData: `@use "${themeColor}" as *; `,
             },
           },
         ],

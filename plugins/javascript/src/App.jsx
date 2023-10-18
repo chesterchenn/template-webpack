@@ -1,5 +1,12 @@
 import React from 'react';
+import './style.scss';
 
-const App = () => <div className="text">Hello, JavaScript.</div>;
+const App = () => {
+  return (
+    <>
+      <div className="text">Hello, JavaScript.</div>
+    </>
+  );
+};
 
 export default App;

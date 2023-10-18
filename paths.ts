@@ -6,6 +6,7 @@ const dist = path.resolve(__dirname, 'dist');
 const localPath = path.resolve(__dirname, '.config.json');
 const indexHTML = path.resolve(root, 'index.html');
 const assets = path.resolve(root, 'assets');
+const themeColor = path.resolve(__dirname, 'sass', '_variables.scss');
 
 let isTypeScript: boolean;
 let isJavaScript: boolean;
@@ -26,4 +27,15 @@ function exportPath() {
 
 exportPath();
 
-export { dist, root, indexHTML, localPath, entryIndex, isTypeScript, isJavaScript, src, assets };
+export {
+  dist,
+  root,
+  indexHTML,
+  localPath,
+  entryIndex,
+  isTypeScript,
+  isJavaScript,
+  src,
+  assets,
+  themeColor,
+};
