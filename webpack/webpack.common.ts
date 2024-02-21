@@ -54,7 +54,6 @@ const config: Configuration = {
       },
       {
         test: /\.(c|sc)ss/,
-        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader',
