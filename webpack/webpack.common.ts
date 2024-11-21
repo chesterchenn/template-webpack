@@ -33,7 +33,7 @@ const config: Configuration = {
         ],
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         exclude: /node_modules/,
         use: [
           {
