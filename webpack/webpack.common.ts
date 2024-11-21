@@ -14,7 +14,7 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -53,7 +53,7 @@ const config: Configuration = {
         ],
       },
       {
-        test: /\.(c|sc)ss/,
+        test: /\.(c|sc)ss$/,
         use: [
           'style-loader',
           'css-loader',
